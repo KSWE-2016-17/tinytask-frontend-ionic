@@ -1,24 +1,23 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-
-
 /*
-  Generated class for the Profile page.
+  Generated class for the Home page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+
 @Component({
-  selector: 'page-profile',
-  templateUrl: 'profile.html'
+  selector: 'page-home',
+  templateUrl: 'home.html'
 })
-export class ProfilePage {
+export class HomePage {
 
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
-    console.log('Hello ProfilePage Page');
+    console.log('Hello HomePage Page');
   }
 
 }
