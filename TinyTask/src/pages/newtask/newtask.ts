@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-
-
 /*
-  Generated class for the Profile page.
+  Generated class for the Newtask page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-profile',
-  templateUrl: 'profile.html'
+  selector: 'page-newtask',
+  templateUrl: 'newtask.html'
 })
-export class ProfilePage {
+export class NewtaskPage {
 
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
-    console.log('Hello ProfilePage Page');
+    console.log('Hello NewtaskPage Page');
   }
 
 }

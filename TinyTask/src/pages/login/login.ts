@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {AuthService} from '../../services/auth/auth.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 /*
   Generated class for the Login page.
@@ -19,5 +19,4 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('Hello LoginPage Page');
   }
-
 }
