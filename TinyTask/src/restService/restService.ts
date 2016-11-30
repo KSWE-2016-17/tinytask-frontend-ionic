@@ -24,28 +24,28 @@ export class RestService {
 
 // Einen einzelnen Task holen
   getTask(task_id) {
-    var url = ' https://tinytaskrest.herokuapp.com/tasks/' + encodeURI(task_id);
+    var url = 'https://tinytaskrest.herokuapp.com/tasks/' + encodeURI(task_id);
     var response = this.http.get(url).map(res => res.json());
     return response;
   }
 
   //Alle tasks holen
   getAllTasks(){
-    var url = ' https://tinytaskrest.herokuapp.com/tasks/';
+    var url = 'https://tinytaskrest.herokuapp.com/tasks/';
     var response = this.http.get(url).map(res => res.json());
     return response;
   }
 
   // Längen und  Breitengrad eines Tasks holen
   getTaskPosition(task_id){
-    var url = ' https://tinytaskrest.herokuapp.com/tasks/' + encodeURI(task_id) + '/position';
+    var url = 'https://tinytaskrest.herokuapp.com/tasks/' + encodeURI(task_id) + '/position';
     var response = this.http.get(url).map(res => res.json());
     return response;
   }
 
   // Alle Bewerber eines Tasks hole
   getTaskBewerber(task_id){
-    var url = ' https://tinytaskrest.herokuapp.com/tasks/' + encodeURI(task_id) + '/applications';
+    var url = 'https://tinytaskrest.herokuapp.com/tasks/' + encodeURI(task_id) + '/applications';
     var response = this.http.get(url).map(res => res.json());
     return response;
   }
@@ -59,56 +59,56 @@ export class RestService {
 
   //Liste aller Benutzer holen
   getUserAll(){
-    var url = ' https://tinytaskrest.herokuapp.com/users';
+    var url = 'https://tinytaskrest.herokuapp.com/users';
     var response = this.http.get(url).map(res => res.json());
     return response;
   }
 
   //Eine Nutzer Bewertung holen
   getUserRating(user_id) {
-    var url = ' https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id)+'/rating';
+    var url = 'https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id)+'/rating';
     var response = this.http.get(url).map(res => res.json());
     return response;
   }
 
   //Gibt bestimmten Benutzer wieder
   getUserSingle(user_id){
-    var url = ' https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id);
+    var url = 'https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id);
     var response = this.http.get(url).map(res => res.json());
     return response;
   }
 
   // Neuen Task erstellen , wahrscheinlich überarbeiten
   newTask(newTask){
-    var url = ' https://tinytaskrest.herokuapp.com/tasks/';
+    var url = 'https://tinytaskrest.herokuapp.com/tasks/';
     var response = this.http.post(url,newTask,null);
     return response;
   }
 
   //Task löschen
   deleteTask(task_id){
-    var url = ' https://tinytaskrest.herokuapp.com/tasks/' + encodeURI(task_id);
+    var url = 'https://tinytaskrest.herokuapp.com/tasks/' + encodeURI(task_id);
     var response =this.http.delete(url);
     return response;
   }
 
   //Benutzer hinzufügen
   newUser(newUser){
-    var url = ' https://tinytaskrest.herokuapp.com/users/';
+    var url = 'https://tinytaskrest.herokuapp.com/users/';
     var response = this.http.post(url,newUser,null);
     return response;
   }
 
   //Bewertung abgeben
   newUserRating(user_id) {
-    var url = ' https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id) + '/rating';
+    var url = 'https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id) + '/rating';
     var response = this.http.post(url,user_id,null);
     return response;
   }
 
   //User löschen
   deleteUser(user_id){
-    var url = ' https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id);
+    var url = 'https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id);
     var response = this.http.delete(url);
     return response;
 
