@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { LoginPage } from '../login/login'
+import { LoginPage } from '../login/login';
+import { AuthService } from '../../services/auth/auth.service';
 
 /*
   Generated class for the Logout page.
@@ -16,7 +17,7 @@ export class LogoutPage {
 
   tabBarElement: any;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public auth: AuthService) {
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
   }
 
@@ -24,5 +25,6 @@ export class LogoutPage {
     console.log('Hello LogoutPage Page');
     this.tabBarElement.style.display = 'none';
     this.navCtrl.setRoot(LoginPage);
+    this.auth.logout();
   }
 }

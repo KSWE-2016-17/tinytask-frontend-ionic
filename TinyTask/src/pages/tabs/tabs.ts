@@ -7,6 +7,11 @@ import { ProfilePage } from '../profile/profile';
 import { MapviewPage } from '../mapview/mapview';
 import { LogoutPage } from '../logout/logout';
 
+import { LoginPage } from '../login/login';
+
+import { NavController } from 'ionic-angular';
+import { AuthService } from '../../services/auth/auth.service';
+
 @Component({
   templateUrl: 'tabs.html'
 })
@@ -20,7 +25,13 @@ export class TabsPage {
   tabr_map: any = MapviewPage;
   tabr_logout: any = LogoutPage;
 
-  constructor() {
+  constructor(public navCtrl: NavController,public auth: AuthService) {
 
   }
+
+	ionViewDidLoad() {
+		if(!this.auth.authenticated()) {
+			this.navCtrl.setRoot(LoginPage);
+		}
+	}
 }
