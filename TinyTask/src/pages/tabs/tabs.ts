@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavParams } from 'ionic-angular';
 
 import { NewtaskPage } from '../newtask/newtask';
 import { HomePage } from '../home/home';
@@ -9,7 +10,7 @@ import { LogoutPage } from '../logout/logout';
 
 import { LoginPage } from '../login/login';
 
-import { NavController } from 'ionic-angular';
+import { App, ViewController } from 'ionic-angular';
 import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
@@ -24,14 +25,14 @@ export class TabsPage {
   tabr_profil: any = ProfilePage;
   tabr_map: any = MapviewPage;
   tabr_logout: any = LogoutPage;
+  mySelectedIndex : number;
 
-  constructor(public navCtrl: NavController,public auth: AuthService) {
+  constructor(navParams: NavParams, public viewCtrl: ViewController, public appCtrl: App, public auth: AuthService) {
 
+	this.mySelectedIndex = navParams.data.tabIndex || 0;
   }
 
 	ionViewDidLoad() {
-		if(!this.auth.authenticated()) {
-			this.navCtrl.setRoot(LoginPage);
-		}
+		console.log('Hello TabsPage');
 	}
 }

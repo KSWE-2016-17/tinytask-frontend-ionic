@@ -15,11 +15,12 @@
 
 <ion-content padding *ngIf="!auth.authenticated()">
 
-<button ion-button block (click)="auth.login()">Login</button>
-</ion-content>
+<button ion-button block (click)="login()">Login</button>
 
+</ion-content>
 
 <ion-content padding *ngIf="auth.authenticated()">
 
+<button ion-button block (click)="redirect()">Weiterleiten</button>
 
 </ion-content>
