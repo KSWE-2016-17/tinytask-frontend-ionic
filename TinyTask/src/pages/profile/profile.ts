@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
+import {Http, Headers} from 'angular2/http';
+import {AuthHttp, tokenNotExpired} from 'angular2-jwt';
 import { NavController } from 'ionic-angular';
-
+import {AuthService} from '../../services/auth/auth.service';
+import { User } from '../../app/app.component';
+import 'rxjs/add/operator/map';
 
 
 /*
@@ -14,8 +18,30 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'profile.html'
 })
 export class ProfilePage {
+  API: string = "https://tinytaskrest.herokuapp.com/users";
+  error: string;
+  auth: AuthService;
+  constructor(
+    public navCtrl: NavController,
+    //private http: Http,
+    private authHttp: AuthHttp,
+    private headers = new Headers(
+      {'Content-Type': 'application/json'}),
 
-  constructor(public navCtrl: NavController) {}
+  ){}
+
+  getUser(id: number) :Promise<User> {
+      const url = `${this.API}/${id}`;
+    return this.authHttp.get(url, {headers: this.headers})
+      .toPromise()
+      .then(response => response.json().data as User)
+      .catch(this.handleError);
+  }
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+  }
 
   ionViewDidLoad() {
     console.log('Hello ProfilePage Page');

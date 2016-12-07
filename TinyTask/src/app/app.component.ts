@@ -4,13 +4,13 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { AuthService } from '../services/auth/auth.service';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = TabsPage;
-//rootPage: any = TabsPage;
+ rootPage: any = LoginPage;
 
   constructor(platform: Platform, private auth: AuthService) {
     platform.ready().then(() => {
@@ -23,4 +23,13 @@ export class MyApp {
       Splashscreen.hide();
     });
   }
+}
+
+export class User {
+  id: string;
+  displayName: string;
+  email: string;
+  picture: string;
+  adress: string;
+  ratings: string;
 }

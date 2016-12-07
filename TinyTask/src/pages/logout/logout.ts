@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { App, ViewController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { AuthService } from '../../services/auth/auth.service';
 
@@ -17,14 +17,17 @@ export class LogoutPage {
 
   tabBarElement: any;
 
-  constructor(public navCtrl: NavController, public auth: AuthService) {
+  constructor(public viewCtrl: ViewController, public appCtrl: App, public auth: AuthService) {
     this.tabBarElement = document.querySelector('.tabbar.show-tabbar');
   }
 
   ionViewDidLoad() {
     console.log('Hello LogoutPage Page');
-    this.tabBarElement.style.display = 'none';
-    this.navCtrl.setRoot(LoginPage);
-    this.auth.logout();
   }
+
+ logout() {
+	this.auth.logout();
+ 	this.viewCtrl.dismiss();
+	this.appCtrl.getRootNav().setRoot(LoginPage);
+}
 }
