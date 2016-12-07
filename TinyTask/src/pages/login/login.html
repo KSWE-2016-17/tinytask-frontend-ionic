@@ -4,16 +4,26 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
+
+<ion-content class="no-scroll" padding *ngIf="!auth.authenticated()">
 <ion-header>
 
   <ion-navbar>
     <ion-title>Tiny Task</ion-title>
   </ion-navbar>
 
+<button ion-button block (click)="login()">Login</button>
 </ion-header>
+</ion-content>
 
+<ion-content class="no-scroll" padding *ngIf="auth.authenticated()">
+<ion-header>
 
-<ion-content padding>
+  <ion-navbar>
+    <ion-title>Tiny Task</ion-title>
+  </ion-navbar>
 
-<button ion-button block (click)="auth.login()">Login</button>
+<button ion-button block (click)="redirect()">Weiterleiten</button>
+</ion-header>
 </ion-content>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { App, ViewController } from 'ionic-angular';
 import { AuthService } from '../../services/auth/auth.service';
+
+import { TabsPage } from '../tabs/tabs';
 
 /*
   Generated class for the Login page.
@@ -14,9 +16,19 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController,public auth: AuthService) {}
+  constructor(public viewCtrl: ViewController, public appCtrl: App, public auth: AuthService) {}
 
-  ionViewDidLoad() {
+
+  ionViewDidLoad() {// executed for the first time loading
     console.log('Hello LoginPage Page');
   }
+
+  login() {
+	this.auth.login();
+  }
+
+  redirect() {
+  this.viewCtrl.dismiss();
+  this.appCtrl.getRootNav().setRoot(TabsPage);
+}
 }
