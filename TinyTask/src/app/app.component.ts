@@ -25,3 +25,12 @@ export class MyApp {
     });
   }
 }
+
+export class User {
+  id: string;
+  displayName: string;
+  email: string;
+  picture: string;
+  adress: string;
+  ratings: string;
+}
