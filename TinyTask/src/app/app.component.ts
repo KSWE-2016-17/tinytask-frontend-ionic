@@ -4,14 +4,13 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { AuthService } from '../services/auth/auth.service';
 
 import { TabsPage } from '../pages/tabs/tabs';
-//import { LoginPage } from '../pages/login/login';
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-//  rootPage = LoginPage;
-  rootPage = TabsPage;
+ rootPage: any = LoginPage;
 
   constructor(platform: Platform, private auth: AuthService) {
     platform.ready().then(() => {

@@ -12,6 +12,8 @@
 
 </ion-header>
 
+<ion-content padding *ngIf="auth.authenticated()">
 
-<ion-content padding>
+<button ion-button block (click)="logout()">Logout</button>
+
 </ion-content>
