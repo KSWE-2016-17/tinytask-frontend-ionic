@@ -24,8 +24,6 @@ export class NewtaskPage {
     public navCtrl: NavController,
     //private http: Http,
     private authHttp: AuthHttp,
-    private headers = new Headers(
-      {'Content-Type': 'application/json'}),
     private name: string,
     private description: string,
     private payment: number,
@@ -45,7 +43,7 @@ export class NewtaskPage {
       position: {latitude: this.latitude, longitude: this.longitude},
       starts: this.starts,
       category: this.category
-    }), {headers: this.headers}).map(res => res.text()).subscribe(err => this.error = err);
+    })).map(res => res.text()).subscribe(err => this.error = err);
   }
 
   ionViewDidLoad() {

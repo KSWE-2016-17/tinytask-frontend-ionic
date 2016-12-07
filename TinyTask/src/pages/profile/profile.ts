@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import {Http, Headers} from 'angular2/http';
+import { Injectable, Component } from '@angular/core';
+import {Http, Headers} from '@angular/http';
 import {AuthHttp, tokenNotExpired} from 'angular2-jwt';
 import { NavController } from 'ionic-angular';
 import {AuthService} from '../../services/auth/auth.service';
 import { User } from '../../app/app.component';
+import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
 
@@ -24,15 +25,12 @@ export class ProfilePage {
   constructor(
     public navCtrl: NavController,
     //private http: Http,
-    private authHttp: AuthHttp,
-    private headers = new Headers(
-      {'Content-Type': 'application/json'}),
-
+    private authHttp: AuthHttp
   ){}
 
   getUser(id: number) :Promise<User> {
       const url = `${this.API}/${id}`;
-    return this.authHttp.get(url, {headers: this.headers})
+    return this.authHttp.get(url)
       .toPromise()
       .then(response => response.json().data as User)
       .catch(this.handleError);
