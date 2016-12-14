@@ -30,6 +30,6 @@ export class User {
   displayName: string;
   email: string;
   picture: string;
-  adress: string;
+  address: string;
   ratings: string;
 }

@@ -28,11 +28,19 @@ export class ProfilePage {
     private authHttp: AuthHttp
   ){}
 
-  getUser(id: number) :Promise<User> {
+  getUser(id: any) :Promise<User> {
       const url = `${this.API}/${id}`;
     return this.authHttp.get(url)
       .toPromise()
       .then(response => response.json().data as User)
+      .catch(this.handleError);
+  }
+
+  getUsers(): Promise<User[]> {
+      const url = `${this.API}/`;
+    return this.authHttp.get(url)
+      .toPromise()
+      .then(response => response.json().data as User[])
       .catch(this.handleError);
   }
 
