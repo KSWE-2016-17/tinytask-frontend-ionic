@@ -13,6 +13,7 @@ import { LogoutPage } from '../pages/logout/logout';
 
 import { AuthConfig, AuthHttp } from 'angular2-jwt';
 import { AuthService } from '../services/auth/auth.service';
+import { RestService } from '../services/rest/rest.service';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
 
@@ -53,6 +54,7 @@ export function getAuthHttp(http) {
     LogoutPage
   ],
   providers: [
+  RestService,
 	AuthService,
 	{
 	   provide: AuthHttp,

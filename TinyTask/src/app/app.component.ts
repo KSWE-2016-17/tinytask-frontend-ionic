@@ -33,3 +33,17 @@ export class User {
   address: string;
   ratings: string;
 }
+
+export class Task {
+
+  createdBy: string;
+  assignedTo: string;
+  name: string;
+  description: string;
+  payment: any;
+  applications: string;
+  starts: any;
+  latitude: string;
+  longitude: string;
+  category: string;
+}
