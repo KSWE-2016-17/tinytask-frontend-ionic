@@ -19,4 +19,20 @@
   <button (click)="getTasks()">Get Tasks</button>
   <button (click)="createTask('testTask','zum testen',5,'53.1234567543','53.1234567543','2016-12-01T15:13:21.000Z','Süßigkeit')">Create Task</button>
   <button (click)="createTask2('testTask','zum testen',5,'53.1234567543','53.1234567543','2016-12-01T15:13:21.000Z','Süßigkeit')">Create Task2</button>
+  <form onsubmit="createTask(taskname,description,payment,'53.1234567543','53.1234567543',start,categorie)">
+    Name your Task: <br>
+    <input type="text" name="taskname"><br>
+    Describe your Task: <br>
+    <input type="text" name="description"><br>
+    How you will thank to it ? :<br>
+    <input type="text" name="payment"><br>
+    <br>// Hier müssen wir eine Map einbinden um zu sehen wo wir sind für die Gradzahlen<br>
+    When do you want your Task to start ? :<br>
+    <input type="text" name="start"><br>
+    Wich Categorie you would choose for it ? :<br>
+    <input type="radio" name="categorie" value="delivery service">delivery service<br>
+    <input type="radio" name="categorie" value="help">help<br>
+    <input type="radio" name="categorie" value="something else">something else<br>
+    <input type="submit" value="submit">
+  </form>
 </ion-content>
