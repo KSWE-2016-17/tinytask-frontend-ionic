@@ -30,6 +30,20 @@ export class User {
   displayName: string;
   email: string;
   picture: string;
-  adress: string;
+  address: string;
   ratings: string;
+}
+
+export class Task {
+
+  createdBy: string;
+  assignedTo: string;
+  name: string;
+  description: string;
+  payment: any;
+  applications: string;
+  starts: any;
+  latitude: string;
+  longitude: string;
+  category: string;
 }
