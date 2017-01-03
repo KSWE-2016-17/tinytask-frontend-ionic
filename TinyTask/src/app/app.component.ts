@@ -10,7 +10,7 @@ import { LoginPage } from '../pages/login/login';
   template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
- rootPage: any = TabsPage;
+ rootPage: any = LoginPage;
 
   constructor(platform: Platform, private auth: AuthService) {
     platform.ready().then(() => {
