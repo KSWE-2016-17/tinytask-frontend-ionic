@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Suche</ion-title>
+    <ion-title>TinyTask - Suche ...</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,27 @@
 
 <ion-content padding>
   <h1>search</h1>
+</ion-content>
+
+<ion-content padding="true" class="has-header">
+
+  <ion-item>
+    <ion-label>Radius:</ion-label>
+    <ion-select [(ngModel)]="radius" okText="Okay" cancelText="Abbrechen">
+      <ion-option value="5" selected="true">5 km</ion-option>
+      <ion-option value="10">10 km</ion-option>
+      <ion-option value="15">15 km</ion-option>
+      <ion-option value="20">20 km</ion-option>
+      <ion-option value="25">25 km</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <div id="page-markdown3" class="show-list-numbers-and-dots">
+    <p>Verfügbare Tasks:</p>
+    <button ion-button block (click)="chooseTask(task)">Katze hängt auf dem Baum 60 Min</button>
+    <button ion-button block (click)="chooseTask(task)">Rotwein besorgen (eilig!!) 20 MIn</button>
+    <ion-item id="page-list-item1">Item</ion-item>
+    <ion-item id="page-list-item2">Item</ion-item>
+    <ion-item id="page-list-item3">Item</ion-item>
+  </div>
 </ion-content>

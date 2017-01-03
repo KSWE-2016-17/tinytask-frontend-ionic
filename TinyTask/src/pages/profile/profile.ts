@@ -30,6 +30,25 @@ export class ProfilePage {
     private rest: RestService
   ){}
 
+  profile = {
+    emailFirst: '',
+    emailCheck: '',
+    passwordFirst: '',
+    passwordCheck: ''
+  };
+
+  changeEmail() {
+
+  }
+
+  changePassword() {
+
+  }
+
+  deleteAccount() {
+
+  }
+
   getUser(id: any) :Promise<User> {
       const url = `${this.API}/${id}`;
     return this.authHttp.get(url)
