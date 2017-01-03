@@ -18,4 +18,44 @@
   <button (click)="getUser('583ec0c6651f10946045be59')">get User</button>
   <button (click)="getUser2('583ec0c6651f10946045be59')">get User2</button>
   <button (click)="getUsers()">Get Users</button>
+
+  <p>+++++++++++++</p>
+  <p>Alles hierunter sind nur hübschaussehende Sachen</p>
+  <p>+++++++++++++</p>
+
+  <p class="header">Kontoinformationen</p>
+  <p class="info"> User: Eugen<br>
+    Bewertung: 100%</p>
+
+  <hr>
+
+  <p class="header">E-Mail Adresse ändern:</p>
+  <ion-item>
+    <ion-label>Neue E-Mail Adresse</ion-label>
+    <ion-input type="text" [(ngModel)]="profile.emailFirst" name="emailFirst"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>E-Mail bestätigen:</ion-label>
+    <ion-input type="text" [(ngModel)]="profile.emailCheck" name="emailCheck"></ion-input>
+  </ion-item>
+  <button ion-button block (click)="changeEmail()">E-Mail ändern</button>
+
+  <hr>
+
+  <p class="header">Passwort ändern</p>
+  <ion-item>
+    <ion-label>Neues Passwort:</ion-label>
+    <ion-input type="text" [(ngModel)]="profile.passwordFirst" name="passwordFirst"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Passwort bestätigen:</ion-label>
+    <ion-input type="text" [(ngModel)]="profile.passwordCheck" name="passwordCheck"></ion-input>
+  </ion-item>
+  <button ion-button block (click)="changePassword()">Passwort ändern</button>
+
+  <hr>
+
+  <p class="header">Profil löschen</p>
+  <button ion-button block (click)="deleteAccount()">Konto löschen</button>
+
 </ion-content>

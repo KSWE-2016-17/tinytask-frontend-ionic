@@ -31,6 +31,19 @@ export class NewtaskPage {
     private rest: RestService
   ){}
 
+  selectAbgabeort() {
+
+  }
+
+  newtask = {
+    taskname: '',
+    startzeit: '',
+    entlohnung: '',
+    deadline: '',
+    description: '',
+    abgabeort: '' // notwendig? irgendwie die Google Maps Daten speichern müssen wir ja
+  };
+
   getTask(id: any) :Promise<Task> {
     const url = `${this.API}/${id}`;
     return this.authHttp.get(url)

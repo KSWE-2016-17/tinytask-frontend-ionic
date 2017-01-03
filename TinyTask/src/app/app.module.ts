@@ -10,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 import { SearchPage } from '../pages/search/search';
 import { MapviewPage } from '../pages/mapview/mapview';
 import { LogoutPage } from '../pages/logout/logout';
+import { HomeChooseScreenPage } from '../pages/home-choose-screen/home-choose-screen';
+import { HomeTaskScreenPage } from '../pages/home-task-screen/home-task-screen';
 
 import { AuthConfig, AuthHttp } from 'angular2-jwt';
 import { AuthService } from '../services/auth/auth.service';
@@ -36,7 +38,9 @@ export function getAuthHttp(http) {
     HomePage,
     SearchPage,
     MapviewPage,
-    LogoutPage
+    LogoutPage,
+    HomeChooseScreenPage,
+    HomeTaskScreenPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, {tabsPlacement: 'top'})
@@ -51,7 +55,9 @@ export function getAuthHttp(http) {
     HomePage,
     SearchPage,
     MapviewPage,
-    LogoutPage
+    LogoutPage,
+    HomeTaskScreenPage,
+    HomeChooseScreenPage
   ],
   providers: [
   RestService,

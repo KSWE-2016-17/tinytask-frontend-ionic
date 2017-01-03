@@ -35,4 +35,35 @@
     <input type="radio" name="categorie" value="something else">something else<br>
     <input type="submit" value="submit">
   </form>
+
+  <p>+++++++++++++</p>
+  <p>Alles hierunter sind nur hübschaussehende Sachen</p>
+  <p>+++++++++++++</p>
+
+  <form (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>Taskname:</ion-label>
+      <ion-input type="text" [(ngModel)]="newtask.taskname" name="taskname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Startzeit:</ion-label>
+      <!-- <ion-datetime displayFormat="HH:mm" pickerFormat="HH MM" [(ngModel)]="startzeit"></ion-datetime> -->
+      <ion-input type="time" [(ngModel)]="newtask.startzeit" name="startzeit"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Entlohnung:</ion-label>
+      <ion-input type="text" [(ngModel)]="newtask.entlohnung" name="entlohnung"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Deadline:</ion-label>
+      <ion-input type="text" [(ngModel)]="newtask.deadline" name="deadline"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Beschreibung</ion-label>
+      <ion-textarea [(ngModel)]="newtask.description" name="description"></ion-textarea>
+    </ion-item>
+    <button ion-button block (click)="selectAbgabeort()">Abgabeort (google maps)</button>
+    <button ion-button type="submit" block>Task erstellen</button>
+  </form>
+
 </ion-content>
