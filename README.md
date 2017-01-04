@@ -1,7 +1,20 @@
 # tinytask-frontend-ionic
 
-Nachdem clonen des Repos folgendes ausführen damit es läuft:
+Nach dem Klonen des Repos,
+folgendes ausführen,
+damit es läuft:
 
-- npm install
+- `npm install` ausführen (installiert alle Abhängigkeiten aus `package.json`).
+- In der Datei
+`TinyTask/node\_modules/@ionic/app-scripts/dist/webpack/ionic-environment-plugin.js`
+    in Zeile 2 ist ein Rechtschreibfehler,
+    denn `Logger` muss richtig `logger` (klein geschrieben) sein.
 
-- im Ordner "TinyTask/node\_modules/@ionic/app-scripts/dist/webpack" bei der Datei "ionic-environment-plugin.js" in Zeile 2 ist ein Rechtschreibfehler, diese muss so aussehen (beim Pfad muss logger kleingeschrieben sein): "var Logger\_1 = require('../util/logger');"
+    Die komplette Zeile sieht (richtig) so aus:
+
+    ```js
+    var Logger\_1 = require('../util/logger');
+    ```
+- `ionic` mit entsprechenden Befehlen aufrufen,
+    um die Anwendung zu starten.
+
