@@ -1,6 +1,8 @@
 /**
  * Created by eugen on 16.11.16.
  * changes by karstenAMF/oxanaZh
+ *
+ * DEPRICATED!! Use ../services/rest.service.ts instead!
  */
 import {Http, Headers} from '@angular/http';
 import {RequestOptions} from '@angular/http';
